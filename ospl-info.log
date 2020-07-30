@@ -1,0 +1,560 @@
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:28:38-0300
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 0 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+              SystemId             : 1550253079 from [1,2147483647]
+Node        : meslin-notebook
+Process     : java <7181>
+Thread      : spliced 7fe85f20f700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/The OpenSplice domain service/u_domain.c/785/0/1593804518.669044948/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:28:38-0300
+Description : Service cmsoap disabled
+Node        : meslin-notebook
+Process     : java <7181>
+Thread      : spliced 7fe85f20f700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/OpenSplice domain service/sr_componentInfo.c/446/0/1593804518.669528979/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:28:38-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <7181>
+Thread      : spliced 7fe85f20f700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804518.669972777/0
+========================================================================================
+Report      : WARNING
+Date        : 2020-07-03T16:28:38-0300
+Description : using network interface eno1 (10.0.0.131) selected arbitrarily from: eno1, wlp2s0, vmnet1, vmnet8, docker0
+
+Node        : meslin-notebook
+Process     : java <7181>
+Thread      : ddsi2 7fe7c3fff700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/ddsi2/q_nwif.c/989/0/1593804518.793045785/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:28:38-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <7181>
+Thread      : ddsi2 7fe7c3fff700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804518.796741511/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:28:39-0300
+Description : The durability service can be identified by ID: 1550253079
+Node        : meslin-notebook
+Process     : java <7181>
+Thread      : durability 7fe83c1ee700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/DurabilityService/d_durability.c/554/0/1593804519.268829789/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:28:46-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <7181>
+Thread      : conflictResolver 7fe82806a700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804526.856020090/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:32:00-0300
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 0 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+              SystemId             : 1873807119 from [1,2147483647]
+Node        : meslin-notebook
+Process     : java <7682>
+Thread      : spliced 7fc56c0d2700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/The OpenSplice domain service/u_domain.c/785/0/1593804720.394879582/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:32:00-0300
+Description : Service cmsoap disabled
+Node        : meslin-notebook
+Process     : java <7682>
+Thread      : spliced 7fc56c0d2700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/OpenSplice domain service/sr_componentInfo.c/446/0/1593804720.395433767/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:32:00-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <7682>
+Thread      : spliced 7fc56c0d2700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804720.395920079/0
+========================================================================================
+Report      : WARNING
+Date        : 2020-07-03T16:32:00-0300
+Description : using network interface eno1 (10.0.0.131) selected arbitrarily from: eno1, wlp2s0, vmnet1, vmnet8, docker0
+
+Node        : meslin-notebook
+Process     : java <7682>
+Thread      : ddsi2 7fc544c5c700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/ddsi2/q_nwif.c/989/0/1593804720.400000487/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:32:00-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <7682>
+Thread      : ddsi2 7fc544c5c700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804720.404210895/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:32:00-0300
+Description : The durability service can be identified by ID: 1873807119
+Node        : meslin-notebook
+Process     : java <7682>
+Thread      : durability 7fc544ffe700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/DurabilityService/d_durability.c/554/0/1593804720.808573877/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:33:06-0300
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 0 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+              SystemId             : 270172196 from [1,2147483647]
+Node        : meslin-notebook
+Process     : java <7935>
+Thread      : spliced 7fad2aa2b700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/The OpenSplice domain service/u_domain.c/785/0/1593804786.835606696/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:33:06-0300
+Description : Service cmsoap disabled
+Node        : meslin-notebook
+Process     : java <7935>
+Thread      : spliced 7fad2aa2b700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/OpenSplice domain service/sr_componentInfo.c/446/0/1593804786.836137784/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:33:06-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <7935>
+Thread      : spliced 7fad2aa2b700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804786.836881831/0
+========================================================================================
+Report      : WARNING
+Date        : 2020-07-03T16:33:06-0300
+Description : using network interface eno1 (10.0.0.131) selected arbitrarily from: eno1, wlp2s0, vmnet1, vmnet8, docker0
+
+Node        : meslin-notebook
+Process     : java <7935>
+Thread      : ddsi2 7fad03555700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/ddsi2/q_nwif.c/989/0/1593804786.845029022/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:33:06-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <7935>
+Thread      : ddsi2 7fad03555700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804786.850352048/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:33:07-0300
+Description : The durability service can be identified by ID: 270172196
+Node        : meslin-notebook
+Process     : java <7935>
+Thread      : durability 7fad081fb700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/DurabilityService/d_durability.c/554/0/1593804787.063851550/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:35:23-0300
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 0 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+              SystemId             : 556547606 from [1,2147483647]
+Node        : meslin-notebook
+Process     : java <8262>
+Thread      : spliced 7f50850e1700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/The OpenSplice domain service/u_domain.c/785/0/1593804923.024220398/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:35:23-0300
+Description : Service cmsoap disabled
+Node        : meslin-notebook
+Process     : java <8262>
+Thread      : spliced 7f50850e1700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/OpenSplice domain service/sr_componentInfo.c/446/0/1593804923.024541360/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:35:23-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <8262>
+Thread      : spliced 7f50850e1700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804923.024982025/0
+========================================================================================
+Report      : WARNING
+Date        : 2020-07-03T16:35:23-0300
+Description : using network interface eno1 (10.0.0.131) selected arbitrarily from: eno1, wlp2s0, vmnet1, vmnet8, docker0
+
+Node        : meslin-notebook
+Process     : java <8262>
+Thread      : ddsi2 7f5051041700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/ddsi2/q_nwif.c/989/0/1593804923.029235325/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:35:23-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <8262>
+Thread      : ddsi2 7f5051041700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593804923.033357182/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:35:23-0300
+Description : The durability service can be identified by ID: 556547606
+Node        : meslin-notebook
+Process     : java <8262>
+Thread      : durability 7f50513e3700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/DurabilityService/d_durability.c/554/0/1593804923.537663828/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:39:39-0300
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 0 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+              SystemId             : 1872522876 from [1,2147483647]
+Node        : meslin-notebook
+Process     : java <8990>
+Thread      : spliced 7f0ba76ea700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/The OpenSplice domain service/u_domain.c/785/0/1593805179.865638237/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:39:39-0300
+Description : Service cmsoap disabled
+Node        : meslin-notebook
+Process     : java <8990>
+Thread      : spliced 7f0ba76ea700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/OpenSplice domain service/sr_componentInfo.c/446/0/1593805179.866119707/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:39:39-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <8990>
+Thread      : spliced 7f0ba76ea700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593805179.866758860/0
+========================================================================================
+Report      : WARNING
+Date        : 2020-07-03T16:39:39-0300
+Description : using network interface eno1 (10.0.0.131) selected arbitrarily from: eno1, wlp2s0, vmnet1, vmnet8, docker0
+
+Node        : meslin-notebook
+Process     : java <8990>
+Thread      : ddsi2 7f0b7c669700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/ddsi2/q_nwif.c/989/0/1593805179.872927719/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:39:39-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <8990>
+Thread      : ddsi2 7f0b7c669700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593805179.877131830/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T16:39:40-0300
+Description : The durability service can be identified by ID: 1872522876
+Node        : meslin-notebook
+Process     : java <8990>
+Thread      : durability 7f0b7ca0b700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/DurabilityService/d_durability.c/554/0/1593805180.087148498/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T17:06:42-0300
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 0 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+              SystemId             : 75521377 from [1,2147483647]
+Node        : meslin-notebook
+Process     : java <11969>
+Thread      : spliced 7ff037b37700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/The OpenSplice domain service/u_domain.c/785/0/1593806802.794433184/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T17:06:42-0300
+Description : Service cmsoap disabled
+Node        : meslin-notebook
+Process     : java <11969>
+Thread      : spliced 7ff037b37700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/OpenSplice domain service/sr_componentInfo.c/446/0/1593806802.794887734/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T17:06:42-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <11969>
+Thread      : spliced 7ff037b37700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593806802.795523461/0
+========================================================================================
+Report      : WARNING
+Date        : 2020-07-03T17:06:42-0300
+Description : using network interface eno1 (10.0.0.131) selected arbitrarily from: eno1, wlp2s0, vmnet1, vmnet8, docker0
+
+Node        : meslin-notebook
+Process     : java <11969>
+Thread      : ddsi2 7fefdca46700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/ddsi2/q_nwif.c/989/0/1593806802.800558452/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T17:06:42-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <11969>
+Thread      : ddsi2 7fefdca46700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593806802.807129087/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T17:06:43-0300
+Description : The durability service can be identified by ID: 75521377
+Node        : meslin-notebook
+Process     : java <11969>
+Thread      : durability 7fefdcde8700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/DurabilityService/d_durability.c/554/0/1593806803.038515647/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T17:06:50-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <11969>
+Thread      : conflictResolver 7fefdc88a700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593806810.565572070/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T21:07:09-0300
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 0 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+              SystemId             : 2132854178 from [1,2147483647]
+Node        : meslin-notebook
+Process     : java <28444>
+Thread      : spliced 7f10693da700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/The OpenSplice domain service/u_domain.c/785/0/1593821229.896485515/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T21:07:09-0300
+Description : Service cmsoap disabled
+Node        : meslin-notebook
+Process     : java <28444>
+Thread      : spliced 7f10693da700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/OpenSplice domain service/sr_componentInfo.c/446/0/1593821229.919665045/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T21:07:09-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <28444>
+Thread      : spliced 7f10693da700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593821229.920316590/0
+========================================================================================
+Report      : WARNING
+Date        : 2020-07-03T21:07:10-0300
+Description : using network interface eno1 (10.0.0.131) selected arbitrarily from: eno1, wlp2s0, vmnet1, vmnet8, docker0
+
+Node        : meslin-notebook
+Process     : java <28444>
+Thread      : ddsi2 7f1040ff4700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/ddsi2/q_nwif.c/989/0/1593821230.053410411/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T21:07:10-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <28444>
+Thread      : ddsi2 7f1040ff4700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593821230.059851458/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T21:07:10-0300
+Description : The durability service can be identified by ID: 2132854178
+Node        : meslin-notebook
+Process     : java <28444>
+Thread      : durability 7f1041396700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/DurabilityService/d_durability.c/554/0/1593821230.750366832/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T21:07:18-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <28444>
+Thread      : conflictResolver 7f1040de3700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1593821238.441009857/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-03T21:31:29-0300
+Description : Missed heartbeat for node 1108025341. (DCPSPublication is complete)
+Node        : meslin-notebook
+Process     : java <28444>
+Thread      : OSPL Garbage Collector 7f1042216700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_spliced/v_spliced.c/2062/769/1593822689.499326041/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-05T23:19:54-0300
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 0 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+              SystemId             : 1490929058 from [1,2147483647]
+Node        : meslin-notebook
+Process     : java <15125>
+Thread      : spliced 7fe0b3232700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/The OpenSplice domain service/u_domain.c/785/0/1594001994.638415421/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-05T23:19:54-0300
+Description : Service cmsoap disabled
+Node        : meslin-notebook
+Process     : java <15125>
+Thread      : spliced 7fe0b3232700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/OpenSplice domain service/sr_componentInfo.c/446/0/1594001994.639010316/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-05T23:19:54-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <15125>
+Thread      : spliced 7fe0b3232700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1594001994.639552901/0
+========================================================================================
+Report      : WARNING
+Date        : 2020-07-05T23:19:54-0300
+Description : using network interface wlp2s0 (10.0.0.173) selected arbitrarily from: wlp2s0, vmnet1, vmnet8, docker0
+
+Node        : meslin-notebook
+Process     : java <15125>
+Thread      : ddsi2 7fe0601a2700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/ddsi2/q_nwif.c/989/0/1594001994.643837565/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-05T23:19:54-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <15125>
+Thread      : ddsi2 7fe0601a2700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1594001994.648173359/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-05T23:19:55-0300
+Description : The durability service can be identified by ID: 1490929058
+Node        : meslin-notebook
+Process     : java <15125>
+Thread      : durability 7fe060544700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/DurabilityService/d_durability.c/554/0/1594001995.152771555/0
+========================================================================================
+Report      : INFO
+Date        : 2020-07-05T23:20:02-0300
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : meslin-notebook
+Process     : java <15125>
+Thread      : conflictResolver 7fe013f88700
+Internals   : 6.9.181127OSS/42c7caf/42c7caf/v_serviceChangeState/v_service.c/266/0/1594002002.823306361/0
