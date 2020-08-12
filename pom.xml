@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>FaceDetector</groupId>
-  <artifactId>FaceDetector</artifactId>
+  <groupId>FaceDetectorV2</groupId>
+  <artifactId>FaceDetectorV2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -16,7 +16,6 @@
       </plugin>
     </plugins>
   </build>
-
 	<!-- Repositórios -->
 	<repositories>
 		<repository>
@@ -41,11 +40,20 @@
 			<artifactId>contextnet</artifactId>
 			<version>2.7</version>
 		</dependency>
+		<!--  Meu repositório -->
         <dependency>
 			<groupId>br.com.meslin</groupId>
 			<artifactId>groupDefiner</artifactId>
 			<version>2.7</version>
-		</dependency>		<!-- JSON -->
+		</dependency>
+		<!--
+		<dependency>
+			<groupId>br.com.meslin</groupId>
+			<artifactId>HTTPConnection</artifactId>
+			<version>0.1</version>
+		</dependency>
+		-->
+		<!-- JSON -->
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
