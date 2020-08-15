@@ -8,8 +8,12 @@ This application is based on OpenCV 4.4.0.
 Version 0.0.1
 - Just works
 
-Version 1.0.0
+Version 1.0.1
 - MVC
 
-Version 1.0.1
+Version 1.0.2
 - TCP, UDP and MR-UDP server
+
+Version 1.0.3
+TCP/IP transmission is working, but still exceptionally extremely very ultra slow
+

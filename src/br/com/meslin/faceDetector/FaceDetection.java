@@ -90,9 +90,7 @@ public class FaceDetection {
 		myThread = null;
 		webSource = null;
 		frame = new Mat();
-		System.err.println("FaceDetection0");
 		mem = new MatOfByte();
-		System.err.println("FaceDetection1");
 		faceDetections = new MatOfRect();
 		// to run under Windows, replace 0 by 1 in the next line
 		faceDetector = new CascadeClassifier(FaceDetection.class.getResource(CASCADE).getPath().substring(0).replace("%20", " "));
