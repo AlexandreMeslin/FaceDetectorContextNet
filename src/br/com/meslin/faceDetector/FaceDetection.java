@@ -220,7 +220,6 @@ public class FaceDetection {
 	 */
 	private void jStartButtonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 		webSource = new VideoCapture(0); // video capture
-		//System.out.println(webSource.get(3) + "," + webSource.get(4));
 		//webSource.open(2);				// capture from camera 0 (/dev/video0)
 		myThread = new DaemonThread();	// create object of threat class
 		Thread thread = new Thread(myThread);

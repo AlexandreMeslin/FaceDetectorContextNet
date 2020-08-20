@@ -7,13 +7,12 @@ import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.nio.ByteBuffer;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.GroupLayout;
@@ -21,6 +20,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
@@ -39,7 +39,7 @@ import br.com.meslin.util.Debug;
  * @author meslin
  *
  */
-public class TCPFaceDetector {
+public class UDPFaceDetector {
 	/** a thread to read a frame, detect faces, and show the image */
 	private DaemonThread myThread;
     /** Contextnet Gateway TCP port number */
@@ -63,7 +63,7 @@ public class TCPFaceDetector {
 	/**
 	 * 
 	 */
-	public TCPFaceDetector() {
+	public UDPFaceDetector() {
 		// Load OpenCV components
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		jCamera = new JCamera();
@@ -79,7 +79,7 @@ public class TCPFaceDetector {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		TCPFaceDetector thisMain = new TCPFaceDetector();
+		UDPFaceDetector thisMain = new UDPFaceDetector();
 		thisMain.doAll();
 	}
 	
@@ -93,18 +93,19 @@ public class TCPFaceDetector {
 				jCamera.setVisible(true);
 			}
 		});
+		
+		/* Create the face detector */
 		myThread = new DaemonThread();	// create object of threat class
 		Thread thread = new Thread(myThread);
 		thread.setDaemon(true);
 		myThread.runnable = true;
 		thread.start();                 // start thread
+		
+		/* Run UDP server */
 		try {
-			@SuppressWarnings("resource")
-			ServerSocket serverSocket = new ServerSocket(gatewayPort);
+			DatagramSocket socket = new DatagramSocket(gatewayPort);
 			System.out.println("READY!!!");
-			while(true) {
-				new ClientHandler(serverSocket.accept()).start();
-			}
+			new ClientHandler(socket).start();
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -158,14 +159,13 @@ public class TCPFaceDetector {
 	 *
 	 */
 	class ClientHandler extends Thread {
-		private Socket clientSocket;
-		private DataInputStream in;
+		private DatagramSocket clientSocket;
 		
 		/**
 		 * 
 		 * @param socket
 		 */
-		public ClientHandler(Socket socket) {
+		public ClientHandler(DatagramSocket socket) {
 			this.clientSocket = socket;
 		}
 		
@@ -178,69 +178,36 @@ public class TCPFaceDetector {
 			int elemSize = 0;
 			int type = 0;
 			/** number of bytes read from the stream */
-			int qtdReadParcial;
-//			int qtdReadTotal;
+        	int totalToRead;
+        	int offset;
 			ByteBuffer buffer = ByteBuffer.allocate(8000*8000 *4); 	// 8k image size using 4-byte pixel
             byte[] temp = new byte[8000*8000 *4];
-            int mtu = 1000;
+            /** Maximum Trasmiting Unit (in bytes) */
+            DatagramPacket packet;
 			
 			try {
-	            in = new DataInputStream(new BufferedInputStream(clientSocket.getInputStream()));
-//	            qtdReadTotal = 0;
 	            while(true) {
-	            	readSync();
-		            // read cols, rows, elemSize, and type
-		            cols = in.readInt();
-		            rows = in.readInt();
-		            elemSize = in.readInt();
-		            type = in.readInt();
-					int totalToRead = in.readInt();
-		            int offset = in.readInt();
-	            	qtdReadParcial = in.read(temp, 0, Math.min(mtu, totalToRead));
-//	            	qtdReadTotal += qtdReadParcial;
+	            	packet = new DatagramPacket(temp, temp.length);
+	            	clientSocket.receive(packet);
+		            // read cols, rows, elemSize, type, totalToRead and offset
+	            	/** represents the position inside the ***temp*** buffer */
+	            	int position = 0;
+	            	cols        = ByteBuffer.wrap(temp, position, 4).getInt(); position += 4;
+	            	rows        = ByteBuffer.wrap(temp, position, 4).getInt(); position += 4;
+	            	elemSize    = ByteBuffer.wrap(temp, position, 4).getInt(); position += 4;
+	            	type        = ByteBuffer.wrap(temp, position, 4).getInt(); position += 4;
+	            	totalToRead = ByteBuffer.wrap(temp, position, 4).getInt(); position += 4;
+	            	offset      = ByteBuffer.wrap(temp, position, 4).getInt(); position += 4;
 	            	buffer.position(offset);
-	            	buffer.put(temp, 0, qtdReadParcial);
+	            	buffer.put(temp, position, totalToRead);
 		            frame = matFromByte(buffer, rows, cols, elemSize, type);
-//	            	onNewFrame(frame);
 	            }
 			}
-			catch (IOException e) {
+			catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		
-		/**
-		 * Reads the sync preamble
-		 * @throws IOException
-		 */
-		private void readSync() throws IOException {
-			int n = 0;
-			byte sync;
-
-			while(n<10) {
-				sync = in.readByte();
-				if(n%2==0) {
-					if(sync == 0) {
-						n++;
-					}
-					else {
-						n = 0;
-					}
-				}
-				else {
-					if(sync == (byte)0xFF) {
-						n++;
-					}
-					else if(sync == 0) {
-						n = 1;
-					}
-					else {
-						n = 0;
-					}
-				}
-			}
-		}
-
 		/**
 		 * Creates a Mat from a ByteBuffer
 		 * @param buffer
@@ -250,12 +217,10 @@ public class TCPFaceDetector {
 		 * @return
 		 */
 		private Mat matFromByte(ByteBuffer buffer, int rows, int cols, int elemSize, int type) {
-	        Mat mat = new Mat(rows, cols, type);
 	        byte[] bytes = new byte[rows * cols * elemSize];
 	        buffer.position(0);
 	        buffer.get(bytes, 0, rows * cols * elemSize);
-	        mat.put(0, 0, bytes);       
-            return mat;
+	        return matFromByte(bytes, rows, cols, type);
 			
 		}
 	    /**
@@ -267,12 +232,12 @@ public class TCPFaceDetector {
 	     * @param type
 	     * @return a Mat object
 	     */
-/*		private Mat matFromByte(byte[] byteArray, int rows, int cols, int type) {
+		private Mat matFromByte(byte[] byteArray, int rows, int cols, int type) {
 	        Mat mat = new Mat(rows, cols, type);
 	        mat.put(0, 0, byteArray);
 	        return mat;
 		}
-*/	    /**
+	    /**
 	     * Creates a Mat from a List<Byte>
 	     * From: https://stackoverflow.com/questions/27065062/opencv-mat-object-serialization-in-java
 	     * @param dataList
@@ -281,64 +246,13 @@ public class TCPFaceDetector {
 	     * @param type
 	     * @return a Mat object
 	     */
-/*	    private Mat matFromByte(List<Byte> dataList, int rows, int cols, int type){
-	        Mat mat = new Mat(rows, cols, type);
-
-	        Byte[] data = new Byte[dataList.size()];
-	        data = dataList.toArray(data);
+	    @SuppressWarnings("unused")
+		private Mat matFromByte(List<Byte> dataList, int rows, int cols, int type){
+	        Byte[] bytes = new Byte[dataList.size()];
+	        bytes = dataList.toArray(bytes);
 	        // From: https://stackoverflow.com/questions/12944377/how-to-convert-byte-to-byte-and-the-other-way-around
-	        mat.put(0, 0, ArrayUtils.toPrimitive(data));
-
-	        return mat;
+	        return matFromByte(ArrayUtils.toPrimitive(bytes), rows, cols, type);
 	    }
-*/
-		/**
-		 * On new data received
-		 * @param topicSample a sample of a topic
-		 */
-/*		private void onNewFrame(Mat frame) {
-			// From: https://sites.google.com/site/pdopencvjava/mat-to-java-bufferedimage
-			MatOfByte mob = new MatOfByte();
-			Imgcodecs.imencode(".bmp", frame, mob);
-			byte[] byteArray = mob.toArray();
-			BufferedImage bufImage = null;
-			InputStream in = new ByteArrayInputStream(byteArray);
-			try {
-				bufImage = ImageIO.read(in);
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
-			Graphics g = jPanel.getGraphics();
-			g.drawImage(bufImage, 0, 0, jPanel.getSize().width, jPanel.getSize().height, 0, 0, bufImage.getWidth(), bufImage.getHeight(), null);
-*/
-/*
- 			try {
-				// detect faces here
-				faceDetector.detectMultiScale(frame, faceDetections);
-				for (Rect rect : faceDetections.toArray()) {
-					Imgproc.rectangle(frame, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255,0));
-				}
-				Imgcodecs.imencode(".bmp", frame, mem);
-				BufferedImage im = ImageIO.read(new ByteArrayInputStream(mem.toArray()));
-				//				buff = (BufferedImage) im;	// FIXME: please, put this line back to the program
-
-				// set form factor according to frame (frame --> mem --> buff)
-				int painelW = jCamera.getWidth();
-				int painelH = jCamera.getHeight() - 150;
-
-				if(painelW * im.getHeight() < painelH * im.getWidth()) {
-					jPanel.setBounds(0, 150, painelW, im.getHeight() * painelW / im.getWidth());
-				}
-				else {
-					jPanel.setBounds(0, 150, im.getWidth() * painelH / im.getHeight(), painelH);
-				}
-				g.drawImage(im, 0, 0, jPanel.getSize().width, jPanel.getSize().height, 0, 0, im.getWidth(), im.getHeight(), null);
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
-*///		}
 	}
 	/**
 	 * 
@@ -358,7 +272,7 @@ public class TCPFaceDetector {
 							// retrieve a previously grabbed frame and decode it
 							Graphics g = jPanel.getGraphics();
 							faceDetector.detectMultiScale(frame, faceDetections);
-							System.out.println(faceDetections.toArray().length + " faces detected");
+//							System.out.println(faceDetections.toArray().length + " faces detected");
 							for (Rect rect : faceDetections.toArray()) {
 								Imgproc.rectangle(frame, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255,0));
 							}

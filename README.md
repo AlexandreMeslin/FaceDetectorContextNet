@@ -17,3 +17,6 @@ Version 1.0.2
 Version 1.0.3
 TCP/IP transmission is working, but still exceptionally extremely very ultra slow
 
+Version 1.0.4
+UPD also working (but also slowlly)
+
